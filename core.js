@@ -64,7 +64,7 @@ const finalChannelId = process.env.FINAL_CHANNEL; // Replace with actual channel
                 // Forward the message to the final channel
                 await client.sendMessage(finalChannelId, { message: msg });
             } else {
-                await client.sendMessage(finalChannelId, { message: msg });
+                await client.sendMessage(finalChannelId, { message: '----------------' });
                 console.log(`Received message from non-source channel ${channelId}. Ignoring.`);
             }
             // If the message is not from the source channel, do nothing
