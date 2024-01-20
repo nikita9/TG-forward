@@ -13,7 +13,7 @@ if (process.env.STRING_SESSION) {
     stringSession = new StringSession(""); // Create a new session for the first run
 }
 
-const sourceChannelId = [2002042008n,1812009563n,1547253689n,1812009563n,1708182542n];
+const sourceChannelId = [2002042008n,1812009563n,-1001812009563n,1547253689n,-1001547253689n,1812009563n,-1001812009563n,1708182542n,-1001708182542n];
 const finalChannelId = process.env.FINAL_CHANNEL; // Replace with actual channel ID
 
 (async () => {
