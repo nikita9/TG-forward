@@ -13,7 +13,7 @@ if (process.env.STRING_SESSION) {
     stringSession = new StringSession(""); // Create a new session for the first run
 }
 
-const sourceChannelIds = [2002042008n,1812009563n,1547253689n,1812009563n,1708182542n];
+const sourceChannelId = [2002042008n,1812009563n,1547253689n,1812009563n,1708182542n];
 const finalChannelId = process.env.FINAL_CHANNEL; // Replace with actual channel ID
 
 (async () => {
@@ -63,6 +63,9 @@ const finalChannelId = process.env.FINAL_CHANNEL; // Replace with actual channel
                 console.log(`Forwarding message: ${msg}`);
                 // Forward the message to the final channel
                 await client.sendMessage(finalChannelId, { message: msg });
+            } else {
+                await client.sendMessage(finalChannelId, { message: msg });
+                console.log(`Received message from non-source channel ${channelId}. Ignoring.`);
             }
             // If the message is not from the source channel, do nothing
         }
